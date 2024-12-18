@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to Java</title>
+    <link rel="stylesheet" type="text/css" href="welcome.css" />
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="jquery.lettering.js"></script>
+    <script src="printProjectInfo.js"></script>
+</head>
+
+<body>
+    <a href="index.html">
+        <div class="container">
+            <section class="main">
+                <h2 class="cs-text">
+                    <span class="cs-text-cut">Welcome</span>
+                    <span class="cs-text-mid">  J   A   V   A  </span>
+                    <span class="cs-text-cut">Welcome</span>
+                </h2>
+            </section>
+            <div class="component">
+                <ul class="grid">
+                    <li class="ot-letter-right"><span data-letter=".">.</span></li>
+                    <li class="ot-letter-bottom"><span data-letter="J">J</span></li>
+                    <li class="ot-letter-right"><span data-letter=".">.</span></li>
+                    <li class="ot-letter-top"><span data-letter="A">A</span></li>
+                    <li class="ot-letter-left"><span data-letter=".">.</span></li>
+                    <li class="ot-letter-left"><span data-letter="V">V</span></li>
+                    <li class="ot-letter-top"><span data-letter=".">.</span></li>
+                    <li class="ot-letter-bottom"><span data-letter="A">A</span></li>
+                    <li class="ot-letter-right"><span data-letter=".">.</span></li>
+                </ul>
+            </div>
+        </div>
+    </a>
+    <script>
+        $(document).ready(function () {
+            $(".cs-text-cut").lettering('words');
+        });
+    </script>
+</body>
+
+</html>
