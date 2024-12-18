@@ -1,0 +1,169 @@
+body {
+    margin: 0; /* 移除默认边距 */
+    padding-bottom: 60px; /* 为内容添加底部填充，确保不被页脚遮挡 */
+    background-color: #f0f0f0;
+}
+
+
+.background-image {
+    background-image: url('background.jpg'); /* 背景图片路径 */
+    background-size: cover; /* 图片覆盖整个背景 */
+    background-attachment: fixed; /* 图片随着页面滚动 */
+    background-position: center; /* 图片居中对齐 */
+    height: 300px; /* 设置背景图片的高度 */
+    display: flex; /* 使用 Flexbox 使内容居中 */
+    flex-direction: column; /* 纵向排列内容 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    color: white; /* 文字颜色为白色 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加文本阴影以提高可读性 */
+}
+
+nav {
+    background-color: rgba(68, 68, 68, 0.8); /* 设置导航栏的背景色为半透明 */
+    height: 60px; /* 设置导航栏高度 */
+   
+}
+
+    nav ul {
+        list-style: none; /* 移除默认的列表样式，使列表项没有前面的点 */
+        padding: 0; /* 移除 ul 的内边距 */
+        display: flex; /* 使用 flex 布局，使列表项水平排列 */
+        justify-content: center; /* 将列表项在水平方向上居中对齐 */
+        margin: 0; /* 移除 ul 的外边距 */
+        height: 100%; /* 使 ul 高度填充整个导航栏 */
+    }
+
+
+        /* 导航栏样式 */
+        nav ul li {
+            margin: 0 15px; /* 设置列表项之间的水平间距 */
+        }
+
+            nav ul li a {
+                color: white; /* 设置链接文字颜色为白色 */
+                text-decoration: none; /* 去掉链接的下划线 */
+                line-height: 60px; /* 垂直居中对齐链接文字 */
+            }
+
+/* 标题样式 */
+h1, h2, h3 {
+    color: #333; /* 设置标题文字颜色为深灰色 */
+}
+
+/* 主体内容样式 */
+main {
+    padding: 20px; /* 设置主体内容的内边距 */
+}
+
+/* 分割线样式 */
+.divider {
+    height: 4px; /* 设置分割线的高度 */
+    background: linear-gradient(to right, #444, #fff, #444); /* 创建渐变背景效果 */
+    margin: 20px 0; /* 设置分割线上下的外边距 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 可选：添加阴影效果 */
+    border-radius: 5px; /* 可选：设置分割线圆角 */
+}
+
+/* 图片画廊布局 */
+.image-gallery {
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: space-between; /* 图片均匀分布，之间的间距相等 */
+    margin-top: 20px; /* 设置画廊的顶部外边距 */
+}
+
+/* 正方形图片样式 */
+.square-image {
+    width: 100px; /* 设置图片宽度为100px */
+    height: 100px; /* 设置图片高度为100px */
+    border: 2px solid #ccc; /* 给图片添加浅灰色边框 */
+    border-radius: 5px; /* 给图片添加圆角边框 */
+}
+
+/* 媒体容器布局 */
+.media-container {
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: center; /* 将媒体内容水平居中 */
+    margin-bottom: 20px; /* 设置媒体容器的底部外边距 */
+}
+
+/* 左对齐图片样式 */
+.left-align {
+    float: left; /* 将图片浮动到左侧 */
+    margin-right: 20px; /* 设置图片右侧的间距 */
+}
+
+/* 视频样式 */
+.video-style {
+    display: block; /* 设置视频为块级元素 */
+    width: 80%; /* 设置视频宽度为100% */
+    height: auto; /* 自动调整视频高度以保持比例 */
+    margin: 20px 0; /* 设置视频上下的外边距 */
+}
+
+/* 链接容器样式 */
+.links {
+    margin-top: 10px; /* 设置链接容器的顶部外边距 */
+}
+
+    .links a {
+        display: block; /* 将每个链接独立显示在一行 */
+        color: #007BFF; /* 设置链接的颜色为蓝色 */
+        text-decoration: none; /* 去掉链接的下划线 */
+        margin: 5px 0; /* 设置链接上下的外边距 */
+    }
+
+        .links a:hover {
+            text-decoration: underline; /* 鼠标悬停时添加下划线 */
+        }
+
+/* 贴纸样式 */
+.sticker {
+    position: fixed; /* 固定贴纸位置 */
+    width: 60px; /* 设置贴纸的宽度 */
+    height: 60px; /* 设置贴纸的高度 */
+    z-index: 10; /* 确保贴纸在最上层 */
+}
+
+/* 贴纸位置样式 */
+.sticker1 {
+    top: 20px; /* 设置贴纸1距离顶部20px */
+    left: 10px; /* 设置贴纸1距离左侧10px */
+}
+
+.sticker2 {
+    top: 20px; /* 设置贴纸2距离顶部20px */
+    right: 10px; /* 设置贴纸2距离右侧10px */
+}
+
+.sticker3 {
+    bottom: 80px; /* 设置贴纸3距离底部80px */
+    left: 10px; /* 设置贴纸3距离左侧10px */
+}
+
+.sticker4 {
+    bottom: 1px; /* 设置贴纸4距离底部1px */
+    right: 10px; /* 设置贴纸4距离右侧10px */
+}
+
+/* 思维导图样式 */
+.mind-map {
+    text-align: center; /* 思维导图居中对齐 */
+    margin: 40px 0; /* 设置思维导图上下的外边距 */
+}
+
+    .mind-map img {
+        max-width: 100%; /* 保证思维导图图片的响应式布局 */
+        height: auto; /* 保持思维导图图片的宽高比 */
+    }
+
+/* 页脚样式 */
+footer {
+    text-align: center; /* 设置页脚内容居中 */
+    padding: 10px; /* 设置页脚的内边距 */
+    background-color: #333; /* 设置页脚背景颜色为深灰色 */
+    color: white; /* 设置页脚文字颜色为白色 */
+    position: fixed; /* 固定页脚位置 */
+    width: 100%; /* 设置页脚宽度为100% */
+    bottom: 0; /* 将页脚固定在页面底部 */
+}

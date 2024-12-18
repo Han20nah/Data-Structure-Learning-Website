@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz</title>
+    <style>
+        /* 样式保持不变 */
+        /* 重置body的默认边距，设置字体，使用flex布局，设置页面高度为100vh */
+        body {
+            margin: 0; /* 去除默认边距 */
+            font-family: Arial, sans-serif; /* 设置字体为Arial或无衬线字体 */
+            display: flex; /* 使用flexbox布局 */
+            height: 100vh; /* 设置页面高度为视口的100% */
+            background-color: #f5f5f5; /* 设置背景颜色为浅灰色 */
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 250px; /* 设置侧边栏宽度 */
+            background-color: #333; /* 设置侧边栏背景颜色为深灰色 */
+            color: white; /* 设置文字颜色为白色 */
+            position: fixed; /* 侧边栏固定在页面左侧 */
+            height: 100%; /* 侧边栏高度占满整个视口 */
+            padding: 20px; /* 给侧边栏添加内边距 */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 给侧边栏右侧添加阴影 */
+        }
+
+            /* 侧边栏标题样式 */
+            .sidebar h2 {
+                color: #fff; /* 设置标题颜色为白色 */
+                text-align: center; /* 标题居中对齐 */
+                margin-bottom: 20px; /* 设置标题底部间距 */
+            }
+
+            /* 侧边栏链接（菜单项）样式 */
+            .sidebar a {
+                display: block; /* 将链接元素设为块级元素，占满一整行 */
+                color: white; /* 设置链接文字颜色为白色 */
+                text-decoration: none; /* 去除链接的下划线 */
+                margin: 10px 0; /* 设置链接上下的间距 */
+                padding: 10px; /* 设置链接的内边距 */
+                border-radius: 5px; /* 设置链接的圆角 */
+                transition: background-color 0.2s; /* 设置背景色变化的过渡效果 */
+                cursor: pointer; /* 鼠标悬停时显示为手形光标 */
+            }
+
+                /* 侧边栏链接悬停效果 */
+                .sidebar a:hover {
+                    background-color: #444; /* 悬停时改变背景颜色 */
+                }
+
+        /* 内容区样式 */
+        .content {
+            margin-left: 300px; /* 内容区向右移动，给侧边栏腾出空间 */
+            padding-left: 20px; /* 设置内容区左内边距 */
+            padding-right: 20px; /* 设置内容区右内边距 */
+            overflow-y: auto; /* 内容溢出时允许垂直滚动 */
+            width: calc(100% - 300px); /* 内容区宽度为剩余的空间（100% - 侧边栏宽度） */
+            background-color: #f5f5f5; /* 设置内容区背景颜色为浅灰色 */
+            height: 100%; /* 内容区高度占满整个视口 */
+        }
+
+        /* 单个问题样式 */
+        .question {
+            background: white; /* 设置问题背景为白色 */
+            padding: 15px; /* 设置问题内容内边距 */
+            margin-bottom: 20px; /* 设置问题之间的下边距 */
+            border-radius: 8px; /* 设置问题框的圆角 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 给问题框添加阴影效果 */
+        }
+
+            /* 问题文本样式 */
+            .question p {
+                font-size: 16px; /* 设置问题文本字体大小 */
+                font-weight: bold; /* 设置问题文本为加粗 */
+            }
+
+        /* 标签样式 */
+        label {
+            display: block; /* 设置标签为块级元素 */
+            margin: 5px 0; /* 设置标签上下的间距 */
+            font-size: 14px; /* 设置标签字体大小 */
+        }
+
+        /* 按钮样式 */
+        button {
+            margin: 10px 5px; /* 设置按钮的外边距 */
+            padding: 10px 15px; /* 设置按钮的内边距 */
+            background-color: #4caf50; /* 设置按钮的背景颜色为绿色 */
+            color: white; /* 设置按钮文字颜色为白色 */
+            border: none; /* 去除按钮的边框 */
+            border-radius: 5px; /* 设置按钮的圆角 */
+            cursor: pointer; /* 鼠标悬停时显示为手形光标 */
+            font-size: 16px; /* 设置按钮文字的字体大小 */
+        }
+
+            /* 重置按钮（红色按钮）样式 */
+            button.reset {
+                background-color: #f44336; /* 设置重置按钮的背景颜色为红色 */
+            }
+
+            /* 按钮悬停效果 */
+            button:hover {
+                opacity: 0.9; /* 悬停时按钮透明度稍微降低 */
+            }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Topics</h2>
+        <a href="#" onclick="loadContent('arrays')">Arrays</a>
+        <a href="#" onclick="loadContent('stacks')">Stacks</a>
+        <a href="#" onclick="loadContent('linked-list')">Linked List</a>
+        <a href="#" onclick="loadContent('queue')">Queue</a>
+    </div>
+
+    <div class="content" id="content">
+        <header>
+            <h1>Welcome to the Quiz</h1>
+            <p>Select a topic from the sidebar to start your quiz.</p>
+        </header>
+    </div>
+
+    <script>
+        const quizzes = {
+            arrays: `
+                <h2>Arrays Quiz</h2>
+                <form id="quizForm">
+                    <div class="question">
+                        <p>1. What is the characteristic of an array?</p>
+                        <label><input type="radio" name="arrays-q1" value="C"> C. Elements are stored in contiguous memory</label>
+                        <label><input type="radio" name="arrays-q1" value="A"> A. Elements can be unordered</label>
+                        <label><input type="radio" name="arrays-q1" value="B"> B. The length can change dynamically</label>
+                        <label><input type="radio" name="arrays-q1" value="D"> D. Arrays can only store numeric values</label>
+                    </div>
+                    <div class="question">
+                        <p>2. What is the time complexity of accessing an element in an array?</p>
+                        <label><input type="radio" name="arrays-q2" value="A"> A. O(n)</label>
+                        <label><input type="radio" name="arrays-q2" value="B"> B. O(1)</label>
+                        <label><input type="radio" name="arrays-q2" value="C"> C. O(log n)</label>
+                        <label><input type="radio" name="arrays-q2" value="D"> D. O(n²)</label>
+                    </div>
+                    <div class="question">
+                        <p>3. Which operation can change the length of an array?</p>
+                        <label><input type="checkbox" name="arrays-q3" value="A"> A. push()</label>
+                        <label><input type="checkbox" name="arrays-q3" value="B"> B. pop()</label>
+                        <label><input type="checkbox" name="arrays-q3" value="C"> C. slice()</label>
+                        <label><input type="checkbox" name="arrays-q3" value="D"> D. splice()</label>
+                    </div>
+                     <div class="question">
+                <p>4. Which method adds an element at the end of an array?</p>
+                <label><input type="radio" name="arrays-q4" value="A"> A. push()</label>
+                <label><input type="radio" name="arrays-q4" value="B"> B. pop()</label>
+                <label><input type="radio" name="arrays-q4" value="C"> C. unshift()</label>
+                <label><input type="radio" name="arrays-q4" value="D"> D. shift()</label>
+            </div>
+            <div class="question">
+                <p>5. What does the slice() method do?</p>
+                <label><input type="radio" name="arrays-q5" value="A"> A. Removes elements from the array</label>
+                <label><input type="radio" name="arrays-q5" value="B"> B. Copies a portion of the array</label>
+                <label><input type="radio" name="arrays-q5" value="C"> C. Adds elements to the array</label>
+                <label><input type="radio" name="arrays-q5" value="D"> D. Changes the length of the array</label>
+            </div>
+            <div class="question">
+                <p>6. How can you find the length of an array?</p>
+                <label><input type="radio" name="arrays-q6" value="A"> A. length()</label>
+                <label><input type="radio" name="arrays-q6" value="B"> B. .len</label>
+                <label><input type="radio" name="arrays-q6" value="C"> C. .length</label>
+                <label><input type="radio" name="arrays-q6" value="D"> D. size()</label>
+            </div>
+            <div class="question">
+                <p>7. What will arr[0] return if the array arr is empty?</p>
+                <label><input type="radio" name="arrays-q7" value="A"> A. 0</label>
+                <label><input type="radio" name="arrays-q7" value="B"> B. undefined</label>
+                <label><input type="radio" name="arrays-q7" value="C"> C. null</label>
+                <label><input type="radio" name="arrays-q7" value="D"> D. Error</label>
+            </div>
+            <div class="question">
+                <p>8. Which method merges two arrays?</p>
+                <label><input type="radio" name="arrays-q8" value="A"> A. concat()</label>
+                <label><input type="radio" name="arrays-q8" value="B"> B. push()</label>
+                <label><input type="radio" name="arrays-q8" value="C"> C. merge()</label>
+                <label><input type="radio" name="arrays-q8" value="D"> D. splice()</label>
+            </div>
+            <div class="question">
+                <p>9. What will the following code return: ["a", "b", "c"].indexOf("b")?</p>
+                <label><input type="radio" name="arrays-q9" value="A"> A. 1</label>
+                <label><input type="radio" name="arrays-q9" value="B"> B. 2</label>
+                <label><input type="radio" name="arrays-q9" value="C"> C. -1</label>
+                <label><input type="radio" name="arrays-q9" value="D"> D. undefined</label>
+            </div>
+            <div class="question">
+                <p>10. What does the splice() method do?</p>
+                <label><input type="radio" name="arrays-q10" value="A"> A. Removes and/or adds elements</label>
+                <label><input type="radio" name="arrays-q10" value="B"> B. Splits the array</label>
+                <label><input type="radio" name="arrays-q10" value="C"> C. Combines arrays</label>
+                <label><input type="radio" name="arrays-q10" value="D"> D. Copies elements</label>
+            </div>
+                    <button type="button" onclick="submitQuiz('arrays')">Submit</button>
+                    <button type="reset" class="reset">Reset</button>
+                </form>
+            `,
+            // 可为其他主题添加类似内容
+        };
+
+        const correctAnswers = {
+            arrays: {
+                "arrays-q1": "C",
+                "arrays-q2": "B",
+                "arrays-q3": ["A", "B", "D"],
+                "arrays-q4": "A",
+                "arrays-q5": "B",
+                "arrays-q6": "C",
+                "arrays-q7": "B",
+                "arrays-q8": "A",
+                "arrays-q9": "A",
+                "arrays-q10": "A"
+            },
+            // 可为其他主题添加答案
+        };
+
+        function loadContent(topic) {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = quizzes[topic] || `<h2>Topic not found</h2>`;
+        }
+
+        function submitQuiz(topic) {
+            const answers = correctAnswers[topic];
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+
+            Object.keys(answers).forEach(question => {
+                const correctAnswer = answers[question];
+                const userAnswer = Array.from(document.querySelectorAll(`input[name="${question}"]:checked`)).map(input => input.value);
+                if (Array.isArray(correctAnswer)) {
+                    if (JSON.stringify(correctAnswer.sort()) === JSON.stringify(userAnswer.sort())) {
+                        score++;
+                    }
+                } else if (userAnswer[0] === correctAnswer) {
+                    score++;
+                }
+            });
+
+            const percentage = Math.round((score / totalQuestions) * 100);
+            localStorage.setItem("quizResult", `${score}/${totalQuestions} (${percentage}%)`);
+            window.location.href = "result.html";
+        }
+    </script>
+</body>
+</html>

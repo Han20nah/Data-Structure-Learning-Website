@@ -1,0 +1,258 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Data Structures</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 外部样式表链接 -->
+    <script src="scripts.js" defer></script> <!-- 引入外部 JavaScript 文件 -->
+    <style>
+        /* 新增样式 */
+        .content-flex-container {
+            display: flex; /* 使用 Flexbox 布局 */
+            align-items: flex-start; /* 顶部对齐 */
+            gap: 20px; /* 视频和贴纸容器之间的间距 */
+            margin: 20px; /* 页面内容的外边距 */
+        }
+
+        .video-container {
+            display: block;
+            margin: 20px 0; /* 设置顶部和底部的外边距 */
+            max-width: 45%; /* 限制视频容器宽度 */
+            padding: 10px;
+            background-color: #f4f4f4;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+            margin-left: 0; /* 视频居左显示 */
+        }
+
+        video {
+            width: 100%; /* 视频占据容器的全部宽度 */
+            height: auto; /* 自动调整高度 */
+        }
+
+        /* 贴纸容器样式，使其位于视频右侧 */
+        .sticker-container {
+            display: flex;
+            flex-direction: column; /* 纵向排列贴纸 */
+            gap: 40px; /* 贴纸之间的间距 */
+        }
+        /* 为 sticker-row 应用 flex 布局，使贴纸按钮横向排列 */
+        .sticker-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .sticker-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .sticker-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+            .sticker-circle img {
+                width: 100%;
+                height: 100%;
+            }
+
+        /* 隐藏音频控件 */
+        audio {
+            display: none; /* 隐藏音频控件 */
+        }
+
+        .centered-text {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        /* 保留贴纸四 */
+        .sticker4 {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+        }
+
+        /* 思维导图整体板块样式 */
+        .mind-map-block {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: stretch; /* 子元素高度相同 */
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* 使文字描述和思维导图大小一致 */
+        .mind-map-description, .mind-map {
+            width: 30%; /* 每个区域占页面的30%宽度 */
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .mind-map img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* 图片覆盖容器 */
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arrays</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="LinkList.html">LinkList</a></li>
+                <li><a href="Stack.html">Stack</a></li>
+                <li><a href="Queue.html">Queue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>What is an Array?</h2>
+        <p>An array is a collection of elements identified by index or key...</p>
+        <!-- 父容器用于视频和贴纸的并排布局 -->
+        <div class="content-flex-container">
+            <div class="video-container">
+                <video controls autoplay loop>
+                    <source src="Arrays.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="centered-text">
+                    <p>Watch this video to learn more about arrays and how to use them effectively in programming.</p>
+                </div>
+            </div>
+
+            <!-- 贴纸容器，放在视频右侧 -->
+            <div class="sticker-container">
+                <!-- 使用 flexbox 横向排列贴纸按钮 -->
+                <div class="sticker-row">
+                    <!-- 第一个贴纸按钮 -->
+                    <button class="sticker-button" onclick="playAudio('audio1')">
+                        <div class="sticker-circle">
+                            <img src="sticker1.png" alt="Sticker 1">
+                        </div>
+                    </button>
+                    <audio id="audio1">
+                        <source src="audio1.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+
+                    <!-- 第二个贴纸按钮 -->
+                    <button class="sticker-button" onclick="playAudio('audio2')">
+                        <div class="sticker-circle">
+                            <img src="sticker2.png" alt="Sticker 2">
+                        </div>
+                    </button>
+                    <audio id="audio2">
+                        <source src="audio2.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+
+                    <!-- 第三个贴纸按钮 -->
+                    <button class="sticker-button" onclick="playAudio('audio3')">
+                        <div class="sticker-circle">
+                            <img src="sticker3.png" alt="Sticker 3">
+                        </div>
+                    </button>
+                    <audio id="audio3">
+                        <source src="audio3.wav" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+
+                    <!-- 第四个贴纸按钮 -->
+                    <button class="sticker-button" onclick="playAudio('audio4')">
+                        <div class="sticker-circle">
+                            <img src="sticker4.png" alt="Sticker 4">
+                        </div>
+                    </button>
+                    <audio id="audio4">
+                        <source src="audio4.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+
+                    <!-- 第五个贴纸按钮 -->
+                    <button class="sticker-button" onclick="playAudio('audio5')">
+                        <div class="sticker-circle">
+                            <img src="sticker5.png" alt="Sticker 5">
+                        </div>
+                    </button>
+                    <audio id="audio5">
+                        <source src="audio5.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+
+                    <!-- 第六个贴纸按钮 -->
+                    <button class="sticker-button" onclick="playAudio('audio6')">
+                        <div class="sticker-circle">
+                            <img src="sticker6.png" alt="Sticker 6">
+                        </div>
+                    </button>
+                    <audio id="audio6">
+                        <source src="audio6.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+                <div class="array-description-container">
+                    <h3>About Arrays in Data Structures</h3>
+                    <p>
+                        Arrays are foundational data structures in computer science. They are crucial for efficiently organizing and accessing large sets of data, supporting algorithms that manage data sequentially. Arrays are widely used in applications such as database management, real-time processing, scientific calculations, and machine learning, where they enable quick data retrieval and provide structure for complex data management.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 保留贴纸四 -->
+        <img src="sticker4.png" alt="sticker4" class="sticker sticker4">
+
+        <!-- 思维导图整体板块 -->
+        <div class="mind-map-block">
+            <div class="mind-map-description">
+                <h2>Understanding Arrays</h2>
+                <p>Arrays are linear data structures used to store multiple items of the same type, often accessed by indexing. This structure simplifies data storage, enabling efficient retrieval and manipulation. Arrays are essential in various programming applications.</p>
+                <p>Arrays play a fundamental role in software development, and their simplicity makes them a popular choice in programming for beginners and professionals alike.</p>
+            </div>
+
+            <div class="mind-map">
+                <img src="Arrays.jpg" alt="Mind Map of Arrays">
+            </div>
+
+            <div class="mind-map-description">
+                <h2>Applications of Arrays</h2>
+                <p>Arrays are widely used in algorithms, data processing, and memory management. They provide a foundation for more complex data structures and enable organized data handling, especially in real-time systems and scientific computations.</p>
+                <p>Arrays facilitate efficient computation and organization, making them indispensable in areas such as image processing, AI model development, and data analysis frameworks.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Data Structures Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

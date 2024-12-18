@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login System</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffbcc;
+        }
+
+        .login-container {
+            position: relative;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .social-buttons {
+            margin: 20px 0;
+        }
+
+        .social-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+
+        .social-button.wechat {
+            background-color: #07C160;
+        }
+
+        .social-button.qq {
+            background-color: #12B7F5;
+        }
+
+        .qr-container {
+            display: none;
+            text-align: center;
+        }
+
+        .qr-container img {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+        }
+
+        .qr-container .icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px auto;
+        }
+
+        .qr-container p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .create-account {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .create-account:hover {
+            text-decoration: underline;
+        }
+
+        .sticker {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        .sticker-1 {
+            top: -20px;
+            left: -20px;
+            background-image: url('11.png');
+        }
+
+        .sticker-2 {
+            top: -20px;
+            right: -20px;
+            background-image: url('12.png');
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- 装饰贴纸 -->
+        <div class="sticker sticker-1"></div>
+        <div class="sticker sticker-2"></div>
+
+        <!-- 登录表单 -->
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <div id="usernameError" class="error-message"></div>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <div id="passwordError" class="error-message"></div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- 社交登录方式 -->
+        <div class="social-buttons" id="socialButtons">
+            <button class="social-button wechat" id="wechatLogin">WeChat Login</button>
+            <button class="social-button qq" id="qqLogin">QQ Login</button>
+        </div>
+
+        <script>
+            // 模拟的正确用户名和密码
+            const correctUsername = "admin";
+            const correctPassword = "12345";
+
+            // 处理表单提交
+            document.getElementById("loginForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // 阻止表单默认提交行为
+
+                // 获取用户输入的用户名和密码
+                const username = document.getElementById("username").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                // 获取错误提示区域
+                const usernameError = document.getElementById("usernameError");
+                const passwordError = document.getElementById("passwordError");
+
+                // 清空错误提示
+                usernameError.textContent = "";
+                passwordError.textContent = "";
+
+                // 验证用户名和密码
+                let hasError = false;
+
+                if (username !== correctUsername) {
+                    usernameError.textContent = "Invalid username. Please try again.";
+                    hasError = true;
+                }
+
+                if (password !== correctPassword) {
+                    passwordError.textContent = "Invalid password. Please try again.";
+                    hasError = true;
+                }
+
+                if (!hasError) {
+                    alert("Login successful!");
+                    window.location.href = "quiz.html"; // 跳转到 quiz.html 页面
+                }
+            });
+        </script>
+
+        <!-- 二维码容器 -->
+        <div class="qr-container" id="qrContainer">
+            <img id="qrIcon" class="icon" src="" alt="Login Icon">
+            <img id="qrCode" src="" alt="Login QR Code">
+            <button id="backButton" style="margin-top: 10px; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Back</button>
+        </div>
+
+
+        <a href="register.html" class="create-account">Don't have an account? Create one here!</a>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const socialButtons = document.getElementById("socialButtons");
+        const qrContainer = document.getElementById("qrContainer");
+        const qrIcon = document.getElementById("qrIcon");
+        const qrCode = document.getElementById("qrCode");
+        const backButton = document.getElementById("backButton");
+
+        document.getElementById("wechatLogin").addEventListener("click", function () {
+            loginForm.style.display = "none"; // 隐藏表单
+            socialButtons.style.display = "none"; // 隐藏社交按钮
+            qrContainer.style.display = "block"; // 显示二维码容器
+            qrIcon.src = "W.png"; // 替换为微信图标路径
+            qrCode.src = "QR.png"; // 替换为微信二维码路径
+        });
+
+        document.getElementById("qqLogin").addEventListener("click", function () {
+            loginForm.style.display = "none"; // 隐藏表单
+            socialButtons.style.display = "none"; // 隐藏社交按钮
+            qrContainer.style.display = "block"; // 显示二维码容器
+            qrIcon.src = "QQ.png"; // 替换为QQ图标路径
+            qrCode.src = "QR.png"; // 替换为QQ二维码路径
+        });
+
+        backButton.addEventListener("click", function () {
+            qrContainer.style.display = "none"; // 隐藏二维码容器
+            loginForm.style.display = "block"; // 显示表单
+            socialButtons.style.display = "block"; // 显示社交按钮
+        });
+    </script>
+</body>
+</html>
+

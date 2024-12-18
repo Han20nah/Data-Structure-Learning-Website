@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar .auth button {
+  margin: 0 5px;
+}
+
+.navbar .plus-btn {
+  background: gold;
+  border: none;
+  padding: 5px 10px;
+}
+
+main {
+  display: flex;
+  padding: 20px;
+}
+
+.recommendations {
+  flex: 3;
+  display: flex;
+  gap: 20px;
+}
+
+.recommendations .card {
+  background: #eee;
+  padding: 20px;
+  flex: 1;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.study-plans {
+  flex: 2;
+  margin-top: 20px;
+}
+
+.study-plans h2 {
+  margin-bottom: 10px;
+}
+
+.plan-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.plan {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1 1 calc(33.333% - 10px);
+  text-align: center;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.calendar {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.promo {
+  background: gold;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
