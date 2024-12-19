@@ -3,12 +3,19 @@
   "WorkspaceRootPath": "E:\\GitHub repository\\Data Structure Learning Website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hannah\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jl\\Documents\\WeChat Files\\wxid_yr1lkm5vrldr22\\FileStorage\\File\\2024-12\\first(4).html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hannah\\Styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hannah\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\welcome.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hannah\\welcome.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,26 +37,50 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "first(4).html",
+              "DocumentMoniker": "C:\\Users\\jl\\Documents\\WeChat Files\\wxid_yr1lkm5vrldr22\\FileStorage\\File\\2024-12\\first(4).html",
+              "ToolTip": "C:\\Users\\jl\\Documents\\WeChat Files\\wxid_yr1lkm5vrldr22\\FileStorage\\File\\2024-12\\first(4).html",
+              "ViewState": "AgIAAAsLAAAAAAAAAAAAABwLAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-18T10:29:33.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "welcome.html",
+              "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\welcome.html",
+              "RelativeDocumentMoniker": "Hannah\\welcome.html",
+              "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\welcome.html",
+              "RelativeToolTip": "Hannah\\welcome.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-18T09:36:26.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Styles.css",
               "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css",
               "RelativeDocumentMoniker": "Hannah\\Styles.css",
               "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css",
               "RelativeToolTip": "Hannah\\Styles.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-12-18T08:24:48.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "index.html",
               "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html",
               "RelativeDocumentMoniker": "Hannah\\index.html",
               "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html",
               "RelativeToolTip": "Hannah\\index.html",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-12-18T08:18:48.695Z",
               "EditorCaption": ""

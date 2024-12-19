@@ -10,7 +10,7 @@ body {
     background-size: cover; /* 图片覆盖整个背景 */
     background-attachment: fixed; /* 图片随着页面滚动 */
     background-position: center; /* 图片居中对齐 */
-    height: 300px; /* 设置背景图片的高度 */
+    height: 650px; /* 设置背景图片的高度 */
     display: flex; /* 使用 Flexbox 使内容居中 */
     flex-direction: column; /* 纵向排列内容 */
     justify-content: center; /* 垂直居中 */
@@ -19,11 +19,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加文本阴影以提高可读性 */
 }
 
-nav {
-    background-color: rgba(68, 68, 68, 0.8); /* 设置导航栏的背景色为半透明 */
-    height: 60px; /* 设置导航栏高度 */
-   
-}
 
     nav ul {
         list-style: none; /* 移除默认的列表样式，使列表项没有前面的点 */
@@ -41,14 +36,27 @@ nav {
         }
 
             nav ul li a {
-                color: white; /* 设置链接文字颜色为白色 */
+                color: #4c2272; /* 设置链接文字颜色为紫色 */
                 text-decoration: none; /* 去掉链接的下划线 */
-                line-height: 60px; /* 垂直居中对齐链接文字 */
+                line-height: 40px; /* 垂直居中对齐链接文字 */
             }
+
+.navbar {
+    position: sticky; /* 开启粘性定位 */
+    top: 0; /* 距离顶部的偏移量 */
+    z-index: 1000; /* 确保固定的导航栏在其他内容之上 */
+    padding: 10px;
+    background-color: rgb(230, 214, 233);
+    height: 40px; /* 设置导航栏高度 */
+}
+
+.content {
+    height: 2000px; /* 模拟页面滚动的内容 */
+}
 
 /* 标题样式 */
 h1, h2, h3 {
-    color: #333; /* 设置标题文字颜色为深灰色 */
+    color: #F3BAB4; /* 设置标题文字颜色为皮粉色 */
 }
 
 /* 主体内容样式 */
@@ -157,13 +165,3 @@ main {
         height: auto; /* 保持思维导图图片的宽高比 */
     }
 
-/* 页脚样式 */
-footer {
-    text-align: center; /* 设置页脚内容居中 */
-    padding: 10px; /* 设置页脚的内边距 */
-    background-color: #333; /* 设置页脚背景颜色为深灰色 */
-    color: white; /* 设置页脚文字颜色为白色 */
-    position: fixed; /* 固定页脚位置 */
-    width: 100%; /* 设置页脚宽度为100% */
-    bottom: 0; /* 将页脚固定在页面底部 */
-}
