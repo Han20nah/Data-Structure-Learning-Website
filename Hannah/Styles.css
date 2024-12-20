@@ -1,9 +1,18 @@
 body {
     margin: 0; /* 移除默认边距 */
     padding-bottom: 60px; /* 为内容添加底部填充，确保不被页脚遮挡 */
-    background-color: #f0f0f0;
+    background-color: #fdf4e3;
+    font-family: 'Comic Sans MS';
+    display:block;
+    width:auto;
+    
 }
 
+header {
+    height:1000px;
+    justify-content:center;
+
+}
 
 .background-image {
     background-image: url('background.jpg'); /* 背景图片路径 */
@@ -17,6 +26,12 @@ body {
     align-items: center; /* 水平居中 */
     color: white; /* 文字颜色为白色 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加文本阴影以提高可读性 */
+    width:100%;
+    text-align:center;
+}
+
+.background-image p {
+    font-size:20px;
 }
 
 
@@ -27,27 +42,35 @@ body {
         justify-content: center; /* 将列表项在水平方向上居中对齐 */
         margin: 0; /* 移除 ul 的外边距 */
         height: 100%; /* 使 ul 高度填充整个导航栏 */
+        
+        
     }
 
 
         /* 导航栏样式 */
         nav ul li {
-            margin: 0 15px; /* 设置列表项之间的水平间距 */
+            margin: 0 40px; /* 设置列表项之间的水平间距 */
         }
 
             nav ul li a {
                 color: #4c2272; /* 设置链接文字颜色为紫色 */
                 text-decoration: none; /* 去掉链接的下划线 */
-                line-height: 40px; /* 垂直居中对齐链接文字 */
+                line-height: 80px; /* 垂直居中对齐链接文字 */
+                font-size:30px;
             }
 
 .navbar {
+    display:flex;
+    justify-content:center;
+    align-content:center;
     position: sticky; /* 开启粘性定位 */
     top: 0; /* 距离顶部的偏移量 */
     z-index: 1000; /* 确保固定的导航栏在其他内容之上 */
-    padding: 10px;
+    padding: 0px;
     background-color: rgb(230, 214, 233);
-    height: 40px; /* 设置导航栏高度 */
+    height: 10vh; /* 设置导航栏高度 */
+    width: inherit;
+    align-content:center;
 }
 
 .content {
@@ -55,14 +78,220 @@ body {
 }
 
 /* 标题样式 */
-h1, h2, h3 {
+h1,h3 {
+    font-size:40px;
     color: #F3BAB4; /* 设置标题文字颜色为皮粉色 */
+    text-align:center;
+    justify-content:center;
 }
 
 /* 主体内容样式 */
 main {
-    padding: 20px; /* 设置主体内容的内边距 */
+    padding: 30px; /* 设置主体内容的内边距 */
 }
+
+
+.container {
+    width: 100%;
+    margin-top:100px;
+    padding: 20px;
+}
+
+.first {
+    display:flex;
+    height:300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 文本区域和图片区域的宽度 */
+.fchild {
+    width:50%;
+   
+}
+
+.fchild img {
+    height:350px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1); /* 放大 */
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fchild button {
+    background-color: #f0a500;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    animation: pulse 1s infinite; /* 持续动画效果 */
+}
+
+/* 弹出框样式 */
+.modal {
+    display: none; /* 初始时隐藏 */
+    position: fixed;
+    z-index: 1; /* 确保弹出框在其他内容之上 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+   
+}
+
+/* 弹出框内容 */
+.modal-content {
+    background-color: #fdf4e3;
+    margin: 15% auto;
+    padding: 0px;
+    width: 600px;
+    height: 360px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #F3BAB4; 
+    border-radius: 20px;
+    display:flex;
+    overflow:hidden;
+}
+
+.left {
+   background:pink;
+    width: 350px;
+    height: 360px;
+    display: flex;
+    border:0;
+    padding:0;
+}
+
+.left video {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.right {
+    width:250px;
+    height:360px;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    border:0;
+    padding:0;
+}
+
+.right-con {
+    width:80%;
+}
+
+.btn {
+    padding: 20px;
+}
+    .btn button {
+        border: 1px solid #ccc;
+        margin: 15px;
+        font-size: 20px;
+        font-family: 'Comic Sans MS';
+        border-radius: 4px;
+        color: #F3BAB4;
+    }
+        .btn button:hover {
+            background-color: #fdf4e3;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+
+input[type=text]:focus {
+    background-color:#F3BAB4;
+    width:50%;
+}
+
+
+/* 关闭按钮 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.main-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-list {
+    background-color:pink;
+    margin-top:200px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width:100%;
+    height:300px;
+
+}
+
+.product-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+}
+
+    .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+    .footer button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        background-color: #f0a500;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
 
 /* 分割线样式 */
 .divider {

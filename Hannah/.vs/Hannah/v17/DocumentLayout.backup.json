@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,46 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Styles.css",
-              "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css",
-              "RelativeDocumentMoniker": "Styles.css",
-              "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css",
-              "RelativeToolTip": "Styles.css",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwDEAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-19T02:17:55.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "index.html",
               "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-12-19T02:15:57.872Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Styles.css",
+              "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css",
+              "RelativeDocumentMoniker": "Styles.css",
+              "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\Styles.css",
+              "RelativeToolTip": "Styles.css",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAF0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-19T02:17:55.27Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "scripts.js",
+              "DocumentMoniker": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\scripts.js",
+              "RelativeDocumentMoniker": "scripts.js",
+              "ToolTip": "E:\\GitHub repository\\Data Structure Learning Website\\Hannah\\scripts.js",
+              "RelativeToolTip": "scripts.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-19T12:12:48.651Z",
               "EditorCaption": ""
             }
           ]

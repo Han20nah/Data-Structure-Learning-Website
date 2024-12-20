@@ -19,13 +19,11 @@
 </head>
 <body>
     <div class="background-image" >
-        <!-- 包含背景图像的 div 容器 -->
-        <header>
+        <!-- 包背景图像的 div 容器 -->
             <h1>Welcome to JAVA LEARNING！</h1> <!-- 网站标题 -->
             <p>"Let's explore the mysterious world of Java together."</p> <!-- 网站描述信息 -->
-        </header>
     </div>
-
+    
     <nav class="navbar">
         <!-- 导航栏 -->
         <ul>
@@ -40,6 +38,75 @@
 </body>
 
 <main>
+    <div class="container">
+        <!-- 顶部区域 -->
+        <section class="first">
+            <div class="fchild">
+                <h1>Study programmes <br> Choose one and get started</h1>
+                <p>
+                    We provide a lot of courses for Java learning enthusiasts, from introductory to proficient...<br />
+                    We believe that if you persevere, you will be able to feel the unique charm of Java!
+                </p>
+                <button id="loginBtn">Login</button>
+            </div>
+            <!-- 主图片区域 -->
+            <div class="fchild">
+                <img src="1right.png" alt="Main Product">
+            </div>
+            <!-- 弹出框 -->
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <div class="left"> <video src="Form.mp4" muted autoplay loop></video></div>
+                    <div class="right" action="#">
+                        <div class="right-con">
+                            <span class="close">&times;</span>
+                            <label for="username">username：</label>
+                            <input type="text" id="username" name="username"><br />
+                            <label for="password">password：</label>
+                            <input type="text" id="password" name="password"><br />
+                            <div class="btn">
+                                <button type="submit">submit</button>
+                                <button type="reset">reset</button>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </div>
+            </div>
+
+            <script src="scripts.js"></script>
+        </section>
+
+        <!-- 商品展示区域 -->
+        <section class="product-list">
+            <div class="product-card">
+                < img src="product1.jpg" alt="Product 1">
+                <p>Product Description</p>
+            </div>
+            <div class="product-card">
+                < img src="product2.jpg" alt="Product 2">
+                <p>Product Description</p>
+            </div>
+            <div class="product-card">
+                < img src="product3.jpg" alt="Product 3">
+                <p>Product Description</p>
+            </div>
+            <div class="product-card">
+                < img src="product2.jpg" alt="Product 2">
+                <p>Product Description</p>
+            </div>
+        </section>
+
+        <!-- 底部功能区域 -->
+        <footer class="footer">
+            <button>Option 1</button>
+            <button>Option 2</button>
+            <button>Option 3</button>
+        </footer>
+    </div>
+
+
     <h2>Introduction</h2> <!-- 简介标题 -->
     <p>Data structures are an essential part of computer science. They are the building blocks for creating efficient algorithms and managing data. Click on the links above to learn more about different data structures.</p> <!-- 简介内容，介绍数据结构的作用 -->
 
