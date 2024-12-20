@@ -179,6 +179,8 @@ main {
 }
 
 .left video {
+    margin:0;
+    padding:0;
     width:100%;
     height:100%;
     object-fit:cover;
@@ -199,12 +201,12 @@ main {
 }
 
 .btn {
-    padding: 20px;
+    padding: 10px;
 }
     .btn button {
         border: 1px solid #ccc;
         margin: 15px;
-        font-size: 20px;
+        font-size: 15px;
         font-family: 'Comic Sans MS';
         border-radius: 4px;
         color: #F3BAB4;
@@ -213,6 +215,7 @@ main {
             background-color: #fdf4e3;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
+
 
 
 input[type=text]:focus {
