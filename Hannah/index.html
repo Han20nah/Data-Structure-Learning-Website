@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口宽度和缩放，确保在移动设备上正常显示 -->
-    <title>Data Structures</title> <!-- 设置网页标题 -->
+    <title>Java</title> <!-- 设置网页标题 -->
     <link rel="stylesheet" href="Styles.css"> <!-- 链接外部 CSS 文件 -->
     <script src="scripts.js" defer></script> <!-- 引入外部 JavaScript 文件 -->
     <style>
@@ -44,10 +44,12 @@
             <div class="fchild">
                 <h1>Study programmes <br> Choose one and get started</h1>
                 <p>
-                    We provide a lot of courses for Java learning enthusiasts, from introductory to proficient...<br />
-                    We believe that if you persevere, you will be able to feel the unique charm of Java!
-                </p>
-                <button id="loginBtn">Login</button>
+                    We offer a variety of Java courses for learners of all levels, from beginners to advanced.<br />
+                    With dedication and perseverance, you'll uncover the unique charm of Java and gain valuable skills
+                    that will open doors to endless opportunities in programming and software development.
+                <p>
+
+                    <button id="loginBtn">Login</button>
             </div>
             <!-- 主图片区域 -->
             <div class="fchild">
@@ -55,21 +57,25 @@
             </div>
             <!-- 弹出框 -->
             <div id="loginModal" class="modal">
+
                 <div class="modal-content">
-                    <div class="left"> <video src="Form.mp4" muted autoplay loop></video></div>
+
+                    <div class="left">
+                        <video src="Form.mp4" muted autoplay loop></video>
+                    </div>
                     <div class="right" action="#">
-                        <div class="right-con">
+                        <div class="right-con" action="#">
                             <span class="close">&times;</span>
-                            <label for="username">username：</label>
-                            <input type="text" id="username" name="username"><br />
-                            <label for="password">password：</label>
-                            <input type="text" id="password" name="password"><br />
+                            <h2>login</h2>
+                            <label for="username">Name：</label>
+                            <input type="text" id="username" name="username">
+                            <label for="password">Password：</label>
+                            <input type="text" id="password" name="password">
                             <div class="btn">
                                 <button type="submit">submit</button>
                                 <button type="reset">reset</button>
                             </div>
                         </div>
-                       
 
                     </div>
                 </div>
@@ -78,23 +84,37 @@
             <script src="scripts.js"></script>
         </section>
 
-        <!-- 商品展示区域 -->
+        <!-- 课程模块 -->
         <section class="product-list">
             <div class="product-card">
-                < img src="product1.jpg" alt="Product 1">
-                <p>Product Description</p>
+                <img src="J1.png" alt="Product 1">
+                <h5>JavaSE</h5>
+                <p>It covers fundamental topics 
+                such as Java basics, data types, arrays, classes and objects, inheritance, polymorphism, interfaces, 
+                and exception handling. 
+                </p>
             </div>
             <div class="product-card">
-                < img src="product2.jpg" alt="Product 2">
-                <p>Product Description</p>
+                <img src="J2.png" alt="Product 2">
+                <h5>JavaEE 1</h5>
+                <p>
+                    This course is an introductory JavaEE program, covering essential topics
+                    such as multithreading, network programming, HTTP protocols, and JVM basics.
+                </p>
             </div>
             <div class="product-card">
-                < img src="product3.jpg" alt="Product 3">
-                <p>Product Description</p>
+                <img src="J3.png" alt="Product 3">
+                <h5>JavaEE 2</h5>
+                <p>
+                   This JavaEE advanced course covers courses 
+                    such as SpringMVC02, SpringMVC03, SpringMVC04, SpringMVC05, logging, Spring configuration, Mybatis, and MybatisPlus.
+                </p>
             </div>
             <div class="product-card">
-                < img src="product2.jpg" alt="Product 2">
-                <p>Product Description</p>
+                <img src="J4.png" alt="Product 2">
+                <h5>Arithmetic</h5>
+                <p>This course is an advanced algorithm selection series, 
+                covering key data structure and algorithm topics commonly encountered in programming interviews and real-world applications. </p>
             </div>
         </section>
 
@@ -107,7 +127,7 @@
     </div>
 
 
-    <h2>Introduction</h2> <!-- 简介标题 -->
+   <!-- 简介标题 -->
     <p>Data structures are an essential part of computer science. They are the building blocks for creating efficient algorithms and managing data. Click on the links above to learn more about different data structures.</p> <!-- 简介内容，介绍数据结构的作用 -->
 
     <div class="media-container">

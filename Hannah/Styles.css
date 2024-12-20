@@ -1,3 +1,10 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
 body {
     margin: 0; /* 移除默认边距 */
     padding-bottom: 60px; /* 为内容添加底部填充，确保不被页脚遮挡 */
@@ -19,7 +26,7 @@ header {
     background-size: cover; /* 图片覆盖整个背景 */
     background-attachment: fixed; /* 图片随着页面滚动 */
     background-position: center; /* 图片居中对齐 */
-    height: 650px; /* 设置背景图片的高度 */
+    height: 600px; /* 设置背景图片的高度 */
     display: flex; /* 使用 Flexbox 使内容居中 */
     flex-direction: column; /* 纵向排列内容 */
     justify-content: center; /* 垂直居中 */
@@ -55,8 +62,8 @@ header {
             nav ul li a {
                 color: #4c2272; /* 设置链接文字颜色为紫色 */
                 text-decoration: none; /* 去掉链接的下划线 */
-                line-height: 80px; /* 垂直居中对齐链接文字 */
-                font-size:30px;
+                line-height: 70px; /* 垂直居中对齐链接文字 */
+                font-size:25px;
             }
 
 .navbar {
@@ -85,6 +92,15 @@ h1,h3 {
     justify-content:center;
 }
 
+h2 {
+    font-size: 30px;
+    color: #F3BAB4;
+    position:absolute;
+    top:30px;
+    right:100px;
+
+}
+
 /* 主体内容样式 */
 main {
     padding: 30px; /* 设置主体内容的内边距 */
@@ -107,11 +123,13 @@ main {
 /* 文本区域和图片区域的宽度 */
 .fchild {
     width:50%;
+    position:relative;
    
 }
 
 .fchild img {
-    height:350px;
+    height:400px;
+    width:500px;
 }
 
 @keyframes pulse {
@@ -129,6 +147,9 @@ main {
 }
 
 .fchild button {
+    position:absolute;
+    top:200px;
+    left:310px;
     background-color: #f0a500;
     padding: 10px 20px;
     color: #fff;
@@ -152,6 +173,7 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+    
    
 }
 
@@ -187,22 +209,25 @@ main {
 }
 
 .right {
-    width:250px;
-    height:360px;
-    display:flex;
-    justify-content:center;
-    align-content:center;
-    border:0;
-    padding:0;
+    width: 250px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0;
+    padding: 0;
+    position: relative;
 }
 
 .right-con {
     width:80%;
 }
 
-.btn {
-    padding: 10px;
-}
+
+
+
+
     .btn button {
         border: 1px solid #ccc;
         margin: 15px;
@@ -212,8 +237,9 @@ main {
         color: #F3BAB4;
     }
         .btn button:hover {
-            background-color: #fdf4e3;
+            background-color: white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            cursor: pointer;
         }
 
 
@@ -227,9 +253,12 @@ input[type=text]:focus {
 /* 关闭按钮 */
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    position:absolute;
+    right:10px;
+    top:0px;
+    
 }
 
     .close:hover,
@@ -238,6 +267,15 @@ input[type=text]:focus {
         text-decoration: none;
         cursor: pointer;
     }
+
+.JSE {
+    display:flex;
+}
+
+.JSE img {
+    height:300px;
+    width:300px;
+}
 
 .main-image {
     display: flex;
@@ -263,6 +301,7 @@ input[type=text]:focus {
 }
 
 .product-card {
+    display:flex;
     background: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -273,7 +312,7 @@ input[type=text]:focus {
 
     .product-card img {
         max-width: 100%;
-        height: auto;
+        height: 100px;
         border-radius: 10px;
     }
 
